@@ -1,8 +1,18 @@
 package com.howareyoudoing.bimc.screen.users;
 
-/**
- * Created by davey on 29.05.2017.
- */
+import android.support.annotation.NonNull;
 
-public class UsersView {
+import com.howareyoudoing.bimc.domain.model.User;
+import com.howareyoudoing.bimc.screen.general.LoadingView;
+
+import java.util.List;
+
+
+public interface UsersView extends LoadingView{
+
+
+	void showMovies(@NonNull List<User> users);
+
+	void showError();
+
 }

@@ -2,9 +2,9 @@
 
     <string name="app_name">BIMc App</string>
     <string name="loading">Loading…</string>
-    <string name="empty_movies">No users :(</string>
-    <string name="movie_details">Users details</string>
+    <string name="empty_users">No users :(</string>
+    <string name="user_details">Users details</string>
     <string name="rating">Rating \u2014 %1$s/%2$s</string>
-    <string name="movie_title">%1$s \u2014 %2$s</string>
+    <string name="user_title">%1$s \u2014 %2$s</string>
 
 </resources>

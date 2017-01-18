@@ -1,8 +1,14 @@
 package com.howareyoudoing.bimc.screen.users;
 
-/**
- * Created by davey on 29.05.2017.
- */
+import android.support.v7.app.AppCompatActivity;
 
-public class UsersActivity {
+
+public class UsersActivity  extends AppCompatActivity implements UsersView, UsersAdapter.OnItemClickListener {
+
+
+
+
+
+
+
 }
