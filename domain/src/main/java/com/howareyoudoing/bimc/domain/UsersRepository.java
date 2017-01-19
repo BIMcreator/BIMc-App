@@ -8,6 +8,6 @@ import rx.Observable;
 public interface UsersRepository {
 
 
-	Observable<List<com.howareyoudoing.bimc.domain.model.User>> popularMovies();
+	Observable<List<com.howareyoudoing.bimc.domain.model.User>> popularUsers();
 
 }

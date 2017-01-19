@@ -19,8 +19,8 @@ public class UserUseCase {
 		mAsyncTransformer = asyncTransformer;
 	}
 
-	public Observable<List<User>> popularMovies() {
-		return mRepository.popularMovies()
+	public Observable<List<User>> popularUsers() {
+		return mRepository.popularUsers()
 				.compose(mAsyncTransformer);
 	}
 

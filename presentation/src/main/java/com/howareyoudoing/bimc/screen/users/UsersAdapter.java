@@ -27,7 +27,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UserHolder>{
 		}
 	};
 
-	public MoviesAdapter(int imageHeight, int imageWidth, @NonNull OnItemClickListener onItemClickListener) {
+	public UsersAdapter(int imageHeight, int imageWidth, @NonNull OnItemClickListener onItemClickListener) {
 		mUsers = new ArrayList<>();
 		mImageHeight = imageHeight;
 		mImageWidth = imageWidth;
@@ -43,16 +43,26 @@ public class UsersAdapter extends RecyclerView.Adapter<UserHolder>{
 
 	@Override
 	public UserHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		return null;
+		return UserHolder.create(parent.getContext(), mImageHeight, mImageWidth);
 	}
 
 	@Override
 	public void onBindViewHolder(UserHolder holder, int position) {
+		User user = mUsers.get(position);
+		holder.bind(user);
 
+		holder.itemView.setOnClickListener(mInternalListener);
+		holder.itemView.setTag(user);
 	}
 
 	@Override
 	public int getItemCount() {
-		return 0;
+		return mUsers.size();
+	}
+
+	public interface OnItemClickListener {
+
+		void onItemClick(@NonNull View view, @NonNull User user);
+
 	}
 }

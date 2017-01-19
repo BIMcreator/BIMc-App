@@ -11,7 +11,7 @@ import java.util.List;
 public interface UsersView extends LoadingView{
 
 
-	void showMovies(@NonNull List<User> users);
+	void showUsers(@NonNull List<User> users);
 
 	void showError();
 
