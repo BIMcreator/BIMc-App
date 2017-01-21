@@ -6,6 +6,10 @@ package com.howareyoudoing.data.repository;
 
 import com.howareyoudoing.bimc.domain.UsersRepository;
 import com.howareyoudoing.bimc.domain.model.User;
+import com.howareyoudoing.data.cache.UsersCacheTransformer;
+import com.howareyoudoing.data.mapper.UsersMapper;
+import com.howareyoudoing.data.model.response.UsersResponse;
+import com.howareyoudoing.data.network.ApiFactory;
 
 import java.util.List;
 
@@ -24,8 +28,8 @@ public class UsersDataRepository implements UsersRepository {
 		 * Добавим также показ прогресс бара при старте загрузки и его скрытие после окончания запроса:
 		 */
         /*ApiFactory.getMoviesService()
-                .popularMovies()
-                .map(MoviesResponse::getMovies)
+                .popularUsers()
+                .map(MoviesResponse::getUsers)
                 .doOnSubscribe(mLoadingView::showLoadingIndicator)
                 .doAfterTerminate(mLoadingView::hideLoadingIndicator)
                 .subscribeOn(Schedulers.io())
@@ -37,8 +41,8 @@ public class UsersDataRepository implements UsersRepository {
 		 */
 /*
         ApiFactory.getMoviesService()
-                .popularMovies()
-                .map(MoviesResponse::getMovies)
+                .popularUsers()
+                .map(MoviesResponse::getUsers)
                 .flatMap(movies -> {
                     Realm.getDefaultInstance().executeTransaction(realm -> {
                         realm.delete(Movie.class);
@@ -63,12 +67,12 @@ public class UsersDataRepository implements UsersRepository {
         })*/
 
 
-		return ApiFactory.getMoviesService()
-				.popularMovies()
-				.map(MoviesResponse::getMovies)
-				.compose(new MoviesCacheTransformer())
+		return ApiFactory.getUsersService()
+				.popularUsers()
+				.map(UsersResponse::getUsers)
+				.compose(new UsersCacheTransformer())
 				.flatMap(Observable::from)
-				.map(new MoviesMapper())
+				.map(new UsersMapper())
 				.toList();
 	}
 }

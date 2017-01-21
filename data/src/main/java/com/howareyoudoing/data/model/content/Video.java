@@ -1,11 +1,11 @@
 package com.howareyoudoing.data.model.content;
 
+
 import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmObject;
 
-
-public class Video extends RealmObject{
+public class Video extends RealmObject {
 
 	@SerializedName("key")
 	private String mKey;
@@ -28,6 +28,5 @@ public class Video extends RealmObject{
 	public void setName(String name) {
 		mName = name;
 	}
-
-
 }
+
