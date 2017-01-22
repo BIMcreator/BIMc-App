@@ -8,6 +8,14 @@ import java.util.List;
 
 import rx.Observable;
 
+/**
+ * слой бизнес-логики является очень небольшим и содержит только управление потоками:
+ * Слой бизнес-логики обращается к слою данных за получением данных с помощью объекта Repository.
+ * Если бы в приложении была более сложная бизнес-логика, за нее отвечал бы этот класс. Тестировать
+ * его достаточно легко, нам нужно только передать ему такой экземпляр Repository, который нужен для
+ * конкретного теста (подмена окружения).
+ */
+
 public class UserUseCase {
 
 	private final UsersRepository mRepository;
@@ -23,6 +31,4 @@ public class UserUseCase {
 		return mRepository.popularUsers()
 				.compose(mAsyncTransformer);
 	}
-
-
 }
