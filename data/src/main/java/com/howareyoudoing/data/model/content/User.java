@@ -10,91 +10,51 @@ import io.realm.annotations.PrimaryKey;
 public class User extends RealmObject {
 
 	@PrimaryKey
-	@SerializedName("id")
-	private int mId;
+	@SerializedName("userSettingsId")
+	private int mUserId;
 
-	@SerializedName("poster_path")
-	private String mPosterPath;
+	@SerializedName("userType")
+	private String mUserType;
 
-	@SerializedName("overview")
-	private String mOverview;
-
-	@SerializedName("original_title")
-	private String mTitle;
-
-	@SerializedName("release_date")
-	private String mReleasedDate;
-
-	@SerializedName("vote_average")
-	private double mVoteAverage;
+	@SerializedName("username")
+	private String mUsername;
 
 	public User() {
 	}
 
-	public User(int id, String posterPath, String overview,
-	             String title, String releasedDate, double voteAverage) {
-		mId = id;
-		mPosterPath = posterPath;
-		mOverview = overview;
-		mTitle = title;
-		mReleasedDate = releasedDate;
-		mVoteAverage = voteAverage;
+	public User(int userId, String userType, String username) {
+		mUserId = userId;
+		mUserType = userType;
+		mUsername = username;
 	}
 
 	public User(Parcel in) {
-		mId = in.readInt();
-		mPosterPath = in.readString();
-		mOverview = in.readString();
-		mTitle = in.readString();
-		mReleasedDate = in.readString();
-		mVoteAverage = in.readDouble();
+		mUserId = in.readInt();
+		mUserType = in.readString();
+		mUsername = in.readString();
 	}
 
-	public int getId() {
-		return mId;
+	public int getUserId() {
+		return mUserId;
 	}
 
-	public void setId(int id) {
-		mId = id;
+	public String getUserType() {
+		return mUserType;
 	}
 
-	public String getPosterPath() {
-		return mPosterPath;
+	public String getUsername() {
+		return mUsername;
 	}
 
-	public void setPosterPath(String posterPath) {
-		mPosterPath = posterPath;
+	public void setUserId(int userId) {
+		mUserId = userId;
 	}
 
-	public String getOverview() {
-		return mOverview;
+	public void setUserType(String userType) {
+		mUserType = userType;
 	}
 
-	public void setOverview(String overview) {
-		mOverview = overview;
-	}
-
-	public String getTitle() {
-		return mTitle;
-	}
-
-	public void setTitle(String title) {
-		mTitle = title;
-	}
-
-	public String getReleasedDate() {
-		return mReleasedDate;
-	}
-
-	public void setReleasedDate(String releasedDate) {
-		mReleasedDate = releasedDate;
-	}
-
-	public double getVoteAverage() {
-		return mVoteAverage;
-	}
-
-	public void setVoteAverage(double voteAverage) {
-		mVoteAverage = voteAverage;
+	public void setUsername(String username) {
+		mUsername = username;
 	}
 }

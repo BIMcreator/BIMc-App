@@ -5,6 +5,6 @@
     <string name="empty_users">No users :(</string>
     <string name="user_details">Users details</string>
     <string name="rating">Rating \u2014 %1$s/%2$s</string>
-    <string name="user_title">%1$s \u2014 %2$s</string>
+    <!--<string name="user_title">%1$s \u2014 %2$s</string>-->
 
 </resources>

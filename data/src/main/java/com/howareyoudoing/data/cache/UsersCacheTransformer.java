@@ -18,12 +18,12 @@ public class UsersCacheTransformer implements Observable.Transformer<List<User>,
 	 * преобразования, которые для удобства были вынесены в отдельные поля:
 	 */
 
-	private final Func1<List<User>, Observable<List<User>>> mSaveFunc = movies -> {
+	private final Func1<List<User>, Observable<List<User>>> mSaveFunc = users -> {
 		Realm.getDefaultInstance().executeTransaction(realm -> {
 			realm.delete(User.class);
-			realm.insert(movies);
+			realm.insert(users);
 		});
-		return Observable.just(movies);
+		return Observable.just(users);
 	};
 
 	private final Func1<Throwable, Observable<List<User>>> mCacheErrorHandler = throwable -> {

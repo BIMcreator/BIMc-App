@@ -5,62 +5,40 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 
-	private String mPosterPath;
-	private String mOverview;
-	private String mTitle;
-	private String mReleasedDate;
-	private double mVoteAverage;
+	private int mUserId;
+	private String mUserType;
+	private String mUsername;
 
 	public User() {
 	}
 
-	public User(String posterPath, String overview,
-	             String title, String releasedDate, double voteAverage) {
-		mPosterPath = posterPath;
-		mOverview = overview;
-		mTitle = title;
-		mReleasedDate = releasedDate;
-		mVoteAverage = voteAverage;
+	public User(int userId, String userType, String username) {
+		mUserId = userId;
+		mUserType = userType;
+		mUsername = username;
 	}
 
-	public String getPosterPath() {
-		return mPosterPath;
+	public int getUserId() {
+		return mUserId;
 	}
 
-	public void setPosterPath(String posterPath) {
-		mPosterPath = posterPath;
+	public String getUserType() {
+		return mUserType;
 	}
 
-	public String getOverview() {
-		return mOverview;
+	public String getUsername() {
+		return mUsername;
 	}
 
-	public void setOverview(String overview) {
-		mOverview = overview;
+	public void setUserId(int userId) {
+		mUserId = userId;
 	}
 
-	public String getTitle() {
-		return mTitle;
+	public void setUserType(String userType) {
+		mUserType = userType;
 	}
 
-	public void setTitle(String title) {
-		mTitle = title;
+	public void setUsername(String username) {
+		mUsername = username;
 	}
-
-	public String getReleasedDate() {
-		return mReleasedDate;
-	}
-
-	public void setReleasedDate(String releasedDate) {
-		mReleasedDate = releasedDate;
-	}
-
-	public double getVoteAverage() {
-		return mVoteAverage;
-	}
-
-	public void setVoteAverage(double voteAverage) {
-		mVoteAverage = voteAverage;
-	}
-
 }

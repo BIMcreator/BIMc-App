@@ -16,7 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.howareyoudoing.bimc.R;
@@ -41,17 +40,17 @@ public class BimcDetailsActivity extends AppCompatActivity {
 	@BindView(R.id.toolbar_layout)
 	CollapsingToolbarLayout mCollapsingToolbar;
 
-	@BindView(R.id.image)
-	ImageView mImage;
+//	@BindView(R.id.image)
+//	ImageView mImage;
 
-	@BindView(R.id.title)
-	TextView mTitleTextView;
+	@BindView(R.id.username)
+	TextView mUsername;
 
-	@BindView(R.id.overview)
-	TextView mOverviewTextView;
+	@BindView(R.id.userType)
+	TextView mUserType;
 
-	@BindView(R.id.rating)
-	TextView mRatingTextView;
+//	@BindView(R.id.rating)
+//	TextView mRatingTextView;
 
 	public static void navigate(@NonNull AppCompatActivity activity, @NonNull View transitionImage,
 	                            @NonNull User user) {
@@ -109,18 +108,15 @@ public class BimcDetailsActivity extends AppCompatActivity {
 		mCollapsingToolbar.setTitle(title);
 		mCollapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(this, android.R.color.transparent));
 
-		Images.loadMovie(mImage, user, Images.WIDTH_780);
+//		Images.loadMovie(mImage, user, Images.WIDTH_780);
 
-		String year = user.getReleasedDate().substring(0, 4);
-		mTitleTextView.setText(getString(R.string.user_title, user.getTitle(), year));
-		mOverviewTextView.setText(user.getOverview());
+//		String year = user.getReleasedDate().substring(0, 4);
+		mUsername.setText(user.getUsername());
+		mUserType.setText(user.getUserType());
 
-		String average = String.valueOf(user.getVoteAverage());
-		average = average.length() > 3 ? average.substring(0, 3) : average;
-		average = average.length() == 3 && average.charAt(2) == '0' ? average.substring(0, 1) : average;
-		mRatingTextView.setText(getString(R.string.rating, average, MAXIMUM_RATING));
+//		String average = String.valueOf(user.getVoteAverage());
+//		average = average.length() > 3 ? average.substring(0, 3) : average;
+//		average = average.length() == 3 && average.charAt(2) == '0' ? average.substring(0, 1) : average;
+//		mRatingTextView.setText(getString(R.string.rating, average, MAXIMUM_RATING));
 	}
-
-
-
 }

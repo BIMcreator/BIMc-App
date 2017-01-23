@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "IMAGES_BASE_URL", '"http://image.tmdb.org/t/p/"'
+        buildConfigField "String", "IMAGES_BASE_URL", '"http://bimreserch.com/bimserver/json"'
     }
 
     buildTypes {

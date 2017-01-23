@@ -9,7 +9,7 @@ import rx.Observable;
 
 public interface UserService {
 
-	@GET("popular/")
+	@GET("bimserver/")
 	Observable<UsersResponse> popularUsers();
 
 }

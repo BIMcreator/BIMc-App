@@ -21,5 +21,4 @@ public class ApiKeyInterceptor  implements Interceptor {
 		request = request.newBuilder().url(url).build();
 		return chain.proceed(request);
 	}
-
 }

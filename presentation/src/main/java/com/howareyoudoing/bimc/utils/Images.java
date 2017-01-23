@@ -8,9 +8,6 @@ import com.howareyoudoing.bimc.BuildConfig;
 import com.howareyoudoing.bimc.domain.model.User;
 import com.squareup.picasso.Picasso;
 
-/**
- * Created by davey on 29.05.2017.
- */
 
 public class Images {
 
@@ -22,7 +19,7 @@ public class Images {
 
 	public static void loadMovie(@NonNull ImageView imageView, @NonNull User user,
 	                             @NonNull String size) {
-		loadMovie(imageView, user.getPosterPath(), size);
+		loadMovie(imageView, "http://black-star.ru/newbrand/images/logo-star.jpg", size);
 	}
 
 	public static void loadMovie(@NonNull ImageView imageView, @NonNull String posterPath,

@@ -9,7 +9,6 @@ public class UsersMapper implements Func1< com.howareyoudoing.data.model.content
 
 	@Override
 	public User call(com.howareyoudoing.data.model.content.User user) {
-		return new User(user.getPosterPath(), user.getOverview(),
-				user.getTitle(), user.getReleasedDate(), user.getVoteAverage());
+		return new User();
 	}
 }
